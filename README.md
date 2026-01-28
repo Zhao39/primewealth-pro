@@ -182,6 +182,21 @@ Ensure the following software is installed on your development environment:
 | `PORT` | Server port number | `5000` | No |
 | `MONGODB_URI` | MongoDB connection string | - | Yes |
 | `NODE_ENV` | Environment mode (`development`/`production`) | `development` | No |
+| `ALLOWED_ORIGINS` | Comma-separated list of allowed CORS origins | `http://localhost:3000,http://localhost:8000` (dev) | No |
+
+**Example `.env` file:**
+```env
+PORT=5000
+NODE_ENV=development
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8000
+```
+
+**Important Security Notes:**
+- Never commit `.env` files to version control
+- Use environment-specific values for `ALLOWED_ORIGINS` in production
+- Rotate credentials immediately if exposed
+- Use secret management services (AWS Secrets Manager, Azure Key Vault, etc.) for production deployments
 
 ### Deployment Configuration
 
