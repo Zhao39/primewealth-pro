@@ -1,11 +1,17 @@
 const functions = require('firebase-functions');
 const express = require('express');
+const mongoose = require('mongoose');
 
 // Initialize the Express app
 const app = express();
 
 // Connect to MongoDB
 const dbURI = process.env.MONGODB_URI;
+if (!dbURI) {
+    console.error('Error: MONGODB_URI environment variable is not set');
+    throw new Error('MONGODB_URI environment variable is required');
+}
+
 mongoose.connect(dbURI, {
 
     useNewUrlParser: true,

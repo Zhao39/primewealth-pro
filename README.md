@@ -155,9 +155,11 @@ Ensure the following software is installed on your development environment:
    Create a `.env` file in the project root directory:
    ```env
    PORT=5000
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
+   MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
    NODE_ENV=development
    ```
+   
+   **Important**: Replace `<username>`, `<password>`, `<cluster>`, and `<database>` with your actual MongoDB Atlas credentials. Never commit the `.env` file to version control.
 
 5. **Configure MongoDB connection**
    

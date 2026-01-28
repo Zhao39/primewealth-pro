@@ -36,3 +36,16 @@ notebooks
 python/dist
 python/pip-wheel-metadata
 *.log
+
+# security - sensitive files
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+secrets.json
+credentials.json
+config.json
+*.secret
+*.token
